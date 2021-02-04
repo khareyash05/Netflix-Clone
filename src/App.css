@@ -1,0 +1,107 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+header{
+  font-size: 50px; 
+  color: red; 
+  border: 1px solid rgb(75, 34, 34); 
+  text-align: center; 
+  text-shadow:20px;
+}
+#root{
+  margin-left: 25px;
+}
+.head{
+  columns: white;
+}
+.card{
+  float:left;           
+  width:15%; 
+  height:350px;  
+  padding: 20px;
+  border:1px solid black;
+  border-radius: 20px;
+  background-color: #121013;
+  margin-right: 5px;
+  margin-left: 10px;
+  margin-bottom: 50px;
+  font-size: 12px;
+  color: white;
+  padding: 10px;
+
+  transition: 0.5s ease;
+}
+.card:hover{
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+  transition: 0.5s ease;
+}
+
+.image{
+  height: 120px;
+  width: 180px;
+  align-items: center;
+}
+.no{
+  font-size: 20px;
+  color: white;
+}
+.name{
+  font-size: 25px;
+  font-style: italic;
+
+}
+.contain{
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.centered {
+  position: absolute;
+  top: 40%;
+  right: 60%;
+  transform: translate(-0.05%, -30%);
+}
+.centered1 {
+  position: absolute;
+  top: 40%;
+  right: 65%;
+  transform: translate(-0.05%, -30%);
+}
+.btn-outline-dark{
+  color: white;
+}
+.search-btn , .search-btn:hover{
+  text-decoration: none;
+}
+.searchBox{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.searchText{
+  width: 15rem;
+  border-radius: 5rem;
+  border: none;
+  outline:  none;
+  height: 3.5rem;
+  /* transform: all 0.2s linear; */
+}
+.searchText:focus{
+  outline: none;
+}
+.search-btn{
+  width: 5rem;
+  height: 5rem;
+  color: black;
+  position: absolute;
+  right: 0.05rem;
+  display: grid;
+  place-items: center;
+  
+}
