@@ -29,3 +29,4 @@ function SearchBar({ onSearch, placeholder = "Search shows and movies..." }) {
 }
 
 export default SearchBar;
+// Trigger LivingDocs E2E test
