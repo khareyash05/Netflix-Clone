@@ -3,6 +3,7 @@ import React, { useState } from "react";
 /**
  * SearchBar - Filters content by search query.
  * Used to search across trending shows, continue watching, and latest releases.
+ * Supports optional debouncing via debounceMs prop (default: 0 = no debounce).
  */
 function SearchBar({ onSearch, placeholder = "Search shows and movies..." }) {
   const [query, setQuery] = useState("");
