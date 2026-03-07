@@ -51,26 +51,33 @@ function createCard2(latest){
 
 function App() {
   const [searchQuery, setSearchQuery] = useState("");
+  const [genreFilter, setGenreFilter] = useState("All");
 
   const filterBySearch = (items) => {
-    if (!searchQuery.trim()) return items;
+    let filtered = items;
+    if (genreFilter !== "All") {
+      filtered = filtered.filter((item) =>
+        (item.type || "").toLowerCase().includes(genreFilter.toLowerCase())
+      );
+    }
+    if (!searchQuery.trim()) return filtered;
     const q = searchQuery.toLowerCase();
-    return items.filter((item) =>
+    return filtered.filter((item) =>
       (item.name || "").toLowerCase().includes(q) ||
       (item.summ || "").toLowerCase().includes(q)
     );
   };
 
-  const filteredTrending = useMemo(() => filterBySearch(trending), [searchQuery]);
-  const filteredData = useMemo(() => filterBySearch(Data), [searchQuery]);
-  const filteredLatest = useMemo(() => filterBySearch(latest), [searchQuery]);
+  const filteredTrending = useMemo(() => filterBySearch(trending), [searchQuery, genreFilter]);
+  const filteredData = useMemo(() => filterBySearch(Data), [searchQuery, genreFilter]);
+  const filteredLatest = useMemo(() => filterBySearch(latest), [searchQuery, genreFilter]);
 
   let styles = {
     color : 'white'
   }
   return (
     <>
-      <SearchBar onSearch={setSearchQuery} placeholder="Search shows and movies..." />
+      <SearchBar onSearch={setSearchQuery} onGenreChange={setGenreFilter} placeholder="Search shows and movies..." />
       <h3 style = {styles}>Trending Shows and Movies- :</h3>
       {filteredTrending.map(createCard)}
       <br />
