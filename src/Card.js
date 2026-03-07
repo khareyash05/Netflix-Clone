@@ -1,4 +1,5 @@
 import React from "react"
+import WatchLaterButton from "./WatchLaterButton"
 
 function Card(props){
     return (
@@ -13,6 +14,7 @@ function Card(props){
                         <a href = {props.link}>
                             <button>Watch Now</button>
                         </a>
+                        <WatchLaterButton name={props.name} />
                     </div>
                 </div>
             </div>
