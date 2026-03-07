@@ -1,5 +1,12 @@
 This is a netflix clone (only frontend) using ReactJS
 
+## Project Features
+
+This project aims to replicate key front-end aspects of Netflix, including:
+
+*   **Browse Sections:** Displaying various categories of movies and TV shows (e.g., Trending Now, Top Rated, Action Movies).
+*   **Movie Details/Trailer Playback:** Ability to view basic details for a selected title and play its trailer.
+*   **Responsive Design:** Optimized for various screen sizes.
 
 # Getting Started with Create React App
 
