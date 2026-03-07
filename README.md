@@ -8,7 +8,7 @@ This project aims to replicate key frontend functionalities of Netflix, includin
 *   **Responsive Design:** Ensuring an optimal viewing experience across different devices.
 *   **User Interface Components:** Implementing reusable components for navigation, carousels, and media cards.
 
-# Getting Started with Create React App
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
