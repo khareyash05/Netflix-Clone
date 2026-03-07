@@ -1,5 +1,10 @@
 This is a netflix clone (only frontend) using ReactJS
 
+## Features
+
+*   **Browse Content:** View a variety of movies and TV shows organized into categories like "Trending Now" and "Netflix Originals."
+*   **Intuitive UI:** Navigate through content using a clean and responsive user interface, similar to the Netflix experience.
+*   **ReactJS Foundation:** Built entirely with ReactJS for a dynamic and interactive frontend.
 
 # Getting Started with Create React App
 
