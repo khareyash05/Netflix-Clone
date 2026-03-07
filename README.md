@@ -1,5 +1,10 @@
 This is a netflix clone (only frontend) using ReactJS
 
+## Features
+
+-   **Browse Content**: Display a curated selection of movies and TV shows, mimicking the Netflix interface.
+-   **Responsive Design**: Ensures optimal viewing experience across different devices and screen sizes.
+-   **Modern UI**: Utilizes ReactJS to deliver a dynamic and interactive user interface.
 
 # Getting Started with Create React App
 
