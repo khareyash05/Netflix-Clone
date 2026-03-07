@@ -1,5 +1,12 @@
 This is a netflix clone (only frontend) using ReactJS
 
+### Features
+
+*   **Browse Content:** View a collection of movies and TV shows categorized for easy navigation.
+*   **Search Functionality:** Find specific titles quickly using the integrated search bar.
+*   **Watch Later List:** Add movies and shows to a personalized "Watch Later" list (data stored locally).
+*   **Responsive Design:** Optimized for various screen sizes, from mobile to desktop.
+
 
 # Getting Started with Create React App
 
