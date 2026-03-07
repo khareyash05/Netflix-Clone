@@ -1,145 +1,18 @@
-openapi: 3.0.3
+openapi: 3.0.0
 info:
   title: Netflix Clone API
-  description: API schema for the Netflix Clone frontend application's data endpoints.
   version: 1.0.0
-
+  description: API documentation for the Netflix clone backend services.
+servers:
+  - url: http://localhost:8080/api/v1
+    description: Local Development Server
+  - url: https://api.netflix-clone.com/v1
+    description: Production Server
 paths:
-  /api/trending:
+  /movies:
     get:
-      summary: Get trending shows and movies
-      description: Returns a list of currently trending shows and movies.
-      responses:
-        "200":
-          description: List of trending content
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: "#/components/schemas/ContentItem"
-
-  /api/continue-watching:
-    get:
-      summary: Get continue watching list
-      description: Returns the user's continue watching list.
-      responses:
-        "200":
-          description: List of continue watching content
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: "#/components/schemas/ContentItem"
-
-  /api/latest:
-    get:
-      summary: Get latest releases
-      description: Returns recently released shows and movies.
-      responses:
-        "200":
-          description: List of latest releases
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: "#/components/schemas/ContentItem"
-
-  /api/search:
-    get:
-      summary: Search content
-      description: Search across all content by name or summary.
+      summary: Get a list of all movies
+      description: Retrieve a list of all available movies, optionally filtered by genre or search query.
       parameters:
-        - name: q
-          in: query
-          required: true
-          description: Search query string
-          schema:
-            type: string
-      responses:
-        "200":
-          description: Filtered list of matching content
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: "#/components/schemas/ContentItem"
-
-  /api/watch-later:
-    get:
-      summary: Get watch later list
-      description: Returns the user's saved watch later items.
-      responses:
-        "200":
-          description: List of saved content names
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  type: string
-    post:
-      summary: Toggle watch later
-      description: Adds or removes a show from the watch later list.
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              required:
-                - name
-              properties:
-                name:
-                  type: string
-                  description: Name of the show to toggle
-      responses:
-        "200":
-          description: Updated watch later list
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  added:
-                    type: boolean
-                  watchLaterList:
-                    type: array
-                    items:
-                      type: string
-
-components:
-  schemas:
-    ContentItem:
-      type: object
-      required:
-        - img
-        - name
-        - link
-        - type
-        - alt
-        - summ
-      properties:
-        img:
-          type: string
-          format: uri
-          description: URL of the content poster image
-        name:
-          type: string
-          description: Title of the show or movie
-        link:
-          type: string
-          format: uri
-          description: Netflix URL for the content
-        type:
-          type: string
-          description: Content type label (e.g. "A Netflix Original Series")
-        alt:
-          type: string
-          description: Alt text for the poster image
-        summ:
-          type: string
-          description: Brief summary or synopsis of the content
+        - in: query
+          name
