@@ -1,7 +1,8 @@
-import React from "react"
+import React, { useState, useMemo } from "react"
 import './App.css';
 import Data from "./Data"
 import Card from "./Card"
+import SearchBar from "./SearchBar"
 import trending from "./trending"
 import latest from "./Latest"
 
@@ -49,19 +50,35 @@ function createCard2(latest){
 }
 
 function App() {
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const filterBySearch = (items) => {
+    if (!searchQuery.trim()) return items;
+    const q = searchQuery.toLowerCase();
+    return items.filter((item) =>
+      (item.name || "").toLowerCase().includes(q) ||
+      (item.summ || "").toLowerCase().includes(q)
+    );
+  };
+
+  const filteredTrending = useMemo(() => filterBySearch(trending), [searchQuery]);
+  const filteredData = useMemo(() => filterBySearch(Data), [searchQuery]);
+  const filteredLatest = useMemo(() => filterBySearch(latest), [searchQuery]);
+
   let styles = {
     color : 'white'
   }
   return (
     <>
+      <SearchBar onSearch={setSearchQuery} placeholder="Search shows and movies..." />
       <h3 style = {styles}>Trending Shows and Movies- :</h3>
-      {trending.map(createCard)}
+      {filteredTrending.map(createCard)}
       <br />
       <h3 style = {styles}>Continue watching for User - :</h3>
-      {Data.map(createCard1)}     
+      {filteredData.map(createCard1)}     
       <br />
       <h3 style = {styles}>Latest Releases - :</h3>  
-      {latest.map(createCard2)}
+      {filteredLatest.map(createCard2)}
     </>
   );
 }
