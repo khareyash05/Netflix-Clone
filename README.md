@@ -1,4 +1,4 @@
-This is a netflix clone (only frontend) using ReactJS
+This is a netflix clone (only frontend) using ReactJS.
 
 ## Features
 
